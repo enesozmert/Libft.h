@@ -6,7 +6,7 @@
 /*   By: eozmert <eozmert@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:29:39 by eozmert           #+#    #+#             */
-/*   Updated: 2022/02/09 10:47:38 by eozmert          ###   ########.fr       */
+/*   Updated: 2022/02/10 12:14:11 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	if (!dst && !src)
+	if (!dst || !src)
 		return (NULL);
 	if (dst == src)
 		return (dst);
@@ -30,6 +30,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	if (src > dst)
 		dst = ft_memcpy(dst, src, n);
-	ft_memcpy(dst, src, n);
 	return (dst);
 }

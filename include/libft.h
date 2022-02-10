@@ -30,6 +30,8 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strrev(char *str);
 char	*ft_strdup(const char *s1);
 char    **ft_split(char const *s, char c);
+char	*ft_strnew(size_t size);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 //strEnd
 
 //mem
@@ -51,6 +53,7 @@ void	ft_putnbr_fd(int n, int fd);
 
 //to
 int	ft_atoi(const char *str);
+char *ft_itoa(int n);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
 //toEnd

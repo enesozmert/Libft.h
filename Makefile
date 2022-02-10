@@ -28,7 +28,7 @@ FTSTR_DIR	=	ft_str/
 FTSTR		=	ft_strchr ft_strdup ft_strjoin ft_split\
 				ft_strlcat ft_strlcpy ft_strlen ft_strncmp \
 				ft_strnstr ft_strrchr ft_strtrim ft_substr \
-				ft_strncpy ft_strndup
+				ft_strncpy ft_strndup ft_strnew ft_strmapi
 
 FTLST_DIR	=	ft_lst/
 FTLST		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
