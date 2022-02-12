@@ -25,15 +25,14 @@ FTTO_DIR	=	ft_to/
 FTTO		=	ft_atoi ft_itoa ft_tolower ft_toupper
 
 FTSTR_DIR	=	ft_str/
-FTSTR		=	ft_strchr ft_strdup ft_strjoin ft_split\
+FTSTR		=	ft_strchr ft_strdup ft_strjoin ft_split \
 				ft_strlcat ft_strlcpy ft_strlen ft_strncmp \
 				ft_strnstr ft_strrchr ft_strtrim ft_substr \
 				ft_strncpy ft_strndup ft_strnew ft_strmapi \
 				ft_striteri
 
 FTLST_DIR	=	ft_lst/
-FTLST		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
-				ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
+FTLST		=	ft_lstadd_front ft_lstnew\
 
 #FileCreate
 
@@ -42,7 +41,7 @@ SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
 SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
-#BONUS_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
+BONUS_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -65,6 +64,10 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJF)
 			@echo Compiling:
 			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 			@echo Compiling Success file is : $< $(SRC_DIR) $@ 
+
+bonus:		$(BONUS_OBJ)
+			@$(AR) $(NAME) $(BONUS_OBJ)
+			@echo "Libft bonus compiled!"
 
 norm:
 			@norminette $(SRC) $(INCLUDES) | grep -v Norme -B1 || true
