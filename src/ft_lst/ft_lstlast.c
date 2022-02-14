@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eozmert <eozmert@student.42kocaeli.co>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 13:37:02 by eozmert           #+#    #+#             */
-/*   Updated: 2022/02/12 13:47:14 by eozmert          ###   ########.fr       */
+/*   Created: 2022/02/12 13:52:41 by eozmert           #+#    #+#             */
+/*   Updated: 2022/02/14 14:51:55 by eozmert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	size;
-
-	size = 0;
-	while (lst)
-	{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 		lst = lst->next;
-		size++;
-	}
-	return (size);
-}
-
-int main()
-{
-	t_list *list1;
-	int i;
-
-	list1 = NULL;
-	i = 0;
-
-	while (i < 10)
-	{
-		ft_lstadd_front(&list1, ft_lstnew(&i));
-		i++;	
-	}
-	printf("size of list : %d \n",ft_lstsize(list1));
+	return (lst);
 }

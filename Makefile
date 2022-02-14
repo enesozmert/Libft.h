@@ -32,7 +32,10 @@ FTSTR		=	ft_strchr ft_strdup ft_strjoin ft_split \
 				ft_striteri
 
 FTLST_DIR	=	ft_lst/
-FTLST		=	ft_lstadd_front ft_lstnew\
+FTLST		=	ft_lstnew ft_lstadd_front ft_lstadd_back \
+				ft_lstlast ft_lstsize \
+				ft_lstdelone ft_lstclear \
+				ft_lstiter ft_lstmap
 
 #FileCreate
 
